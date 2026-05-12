@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HubSpot CRM Guide 2026 — Simplify Group™</title>
+<meta name="description" content="HubSpot CRM Guide 2026, updated with Breeze AI and Prospecting Agent. Simplify Group™ operating manual." />
+<link rel="icon" type="image/png" href="images/simplify-group-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* ====================================================================
+     SIMPLIFY HEALTHCARE BRAND SYSTEM
+     ==================================================================== */
+  :root {
+    /* Simplify Group brand — Arrow Green primary, Near Black, neutrals */
+    --brand-primary: #2D8C4E;        /* Arrow Green */
+    --brand-primary-deep: #1B6B38;   /* Forest Green */
+    --brand-primary-light: #5BB574;  /* Leaf Green */
+    --brand-primary-wash: #DFF2E3;   /* Pale Mint */
+    --brand-primary-mint: #A8DDB5;   /* Mint */
+    --brand-accent: #1B6B38;         /* Forest Green for NEW tags */
+    --brand-accent-wash: #DFF2E3;    /* Pale Mint wash */
+    --near-black: #221F20;
+    --text-primary: #221F20;
+    --text-secondary: #3d3d40;
+    --text-muted: #6e6e72;
+    --charcoal: #4A4547;
+    --silver: #EAEAEB;
+    --orange: #F58532;
+    --orange-wash: #FCDCC8;
+
+    --bg-page: #ffffff;
+    --bg-soft: #f8f9fb;
+    --bg-card: #ffffff;
+    --bg-hover: #eef1f6;
+
+    --border-subtle: #e6e8ec;
+    --border-medium: #d4d7dd;
+
+    --shadow-sm: 0 1px 2px rgba(34, 31, 32, 0.04);
+    --shadow-md: 0 4px 12px rgba(34, 31, 32, 0.06);
+    --shadow-lg: 0 12px 32px rgba(34, 31, 32, 0.08);
+
+    --font-display: 'Proxima Nova', 'proxima-nova', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Proxima Nova', 'proxima-nova', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --sidebar-width: 272px;
+    --toc-width: 232px;
+    --topbar-height: 60px;
+    --content-max: 780px;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+
+    --transition-fast: 0.12s ease;
+    --transition-base: 0.18s ease;
+  }
+
+  [data-theme="dark"] {
+    --bg-page: #14171c;
+    --bg-soft: #1a1d23;
+    --bg-card: #1e2127;
+    --bg-hover: #252830;
+    --text-primary: #e8e9ec;
+    --text-secondary: #c4c6cc;
+    --text-muted: #898c93;
+    --border-subtle: #2a2d34;
+    --border-medium: #363a42;
+    --brand-primary: #5BB574;        /* lighter green for dark bg contrast */
+    --brand-primary-wash: #1a3a23;
+    --brand-accent: #5BB574;
+    --brand-accent-wash: #1a3a23;
+    --orange-wash: #2a1f15;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--topbar-height) + 20px);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ====================================================================
+     TOP BAR
+     ==================================================================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--topbar-height);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  [data-theme="dark"] .topbar {
+    background: rgba(20, 23, 28, 0.92);
+  }
+
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+
+  .topbar-logo {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+    transition: filter var(--transition-base);
+  }
+
+  [data-theme="dark"] .topbar-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  .topbar-divider {
+    width: 1px;
+    height: 22px;
+    background: var(--border-medium);
+    flex-shrink: 0;
+  }
+
+  .topbar-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .topbar-title-main {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--text-primary);
+  }
+
+  .topbar-title-sub {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .topbar-search {
+    flex: 1;
+    max-width: 440px;
+    position: relative;
+  }
+
+  .topbar-search input {
+    width: 100%;
+    height: 36px;
+    padding: 0 56px 0 36px;
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    background: var(--bg-soft);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  }
+
+  .topbar-search input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    background: var(--bg-page);
+    box-shadow: 0 0 0 3px rgba(16, 82, 153, 0.1);
+  }
+
+  .topbar-search-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .topbar-search-kbd {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-page);
+    border: 1px solid var(--border-subtle);
+    padding: 1px 6px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .icon-btn:hover {
+    background: var(--bg-hover);
+    color: var(--brand-primary);
+  }
+
+  .icon-btn:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-menu-btn { display: none; }
+
+  /* ====================================================================
+     LAYOUT
+     ==================================================================== */
+  .layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--toc-width);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ====================================================================
+     SIDEBAR
+     ==================================================================== */
+  .sidebar {
+    position: sticky;
+    top: var(--topbar-height);
+    height: calc(100vh - var(--topbar-height));
+    overflow-y: auto;
+    padding: 20px 12px 40px 20px;
+    border-right: 1px solid var(--border-subtle);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .sidebar::-webkit-scrollbar { width: 6px; }
+  .sidebar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 3px;
+  }
+  .sidebar:hover::-webkit-scrollbar-thumb { background: var(--border-medium); }
+
+  .sidebar-group { margin-bottom: 20px; }
+
+  .sidebar-group-label {
+    font-family: var(--font-display);
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    padding: 6px 12px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-group-label .new-pill {
+    color: var(--brand-accent);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13.5px;
+    border-radius: var(--radius-sm);
+    margin: 1px 0;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .sidebar-link:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  .sidebar-link.active {
+    background: var(--brand-primary-wash);
+    color: var(--brand-primary);
+    font-weight: 600;
+  }
+
+  .sidebar-link.active::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    background: var(--brand-primary);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .sidebar-link.hidden { display: none; }
+
+  /* ====================================================================
+     MAIN CONTENT
+     ==================================================================== */
+  .content {
+    padding: 32px 48px 96px;
+    min-width: 0;
+  }
+
+  .content-inner {
+    max-width: var(--content-max);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumbs a:hover { color: var(--brand-primary); }
+  .breadcrumbs-sep { opacity: 0.5; }
+  .breadcrumbs-current { color: var(--text-primary); font-weight: 500; }
+
+  /* Headings */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    line-height: 1.25;
+    scroll-margin-top: 84px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 56px;
+    height: 3px;
+    background: var(--brand-primary);
+    border-radius: 2px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: var(--border-subtle);
+    margin: 56px 0 28px;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin: 28px 0 10px;
+    letter-spacing: -0.005em;
+  }
+
+  h4 {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 20px 0 8px;
+  }
+
+  .heading-anchor {
+    color: var(--brand-primary);
+    text-decoration: none;
+    opacity: 0;
+    margin-left: 8px;
+    font-weight: 400;
+    transition: opacity var(--transition-fast);
+    font-size: 0.85em;
+  }
+
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor { opacity: 0.5; }
+
+  .heading-anchor:hover { opacity: 1 !important; }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--text-secondary);
+  }
+
+  strong { color: var(--text-primary); font-weight: 600; }
+  em { color: var(--text-secondary); }
+
+  /* Section header */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .section-num {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-primary);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .section-num.new {
+    background: var(--brand-primary);
+    color: white;
+  }
+
+  .new-tag {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: white;
+    background: var(--brand-primary);
+    padding: 3px 7px;
+    border-radius: 4px;
+    vertical-align: middle;
+    transform: translateY(-3px);
+  }
+
+  /* Lists */
+  ul, ol {
+    margin: 0 0 14px 22px;
+    color: var(--text-secondary);
+  }
+
+  li {
+    margin-bottom: 5px;
+    line-height: 1.55;
+  }
+
+  li::marker { color: var(--brand-primary); font-weight: 600; }
+
+  ul ul, ol ul, ul ol {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* Numbered property lists (long ones) */
+  .props {
+    list-style: none;
+    margin: 12px 0 14px;
+    padding: 0;
+    counter-reset: prop;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .props > li {
+    counter-increment: prop;
+    padding: 10px 0 10px 38px;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .props > li::before {
+    content: counter(prop);
+    position: absolute;
+    left: 0;
+    top: 11px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--brand-primary);
+    width: 28px;
+    text-align: center;
+    background: var(--brand-primary-wash);
+    border-radius: 4px;
+    padding: 1px 0;
+  }
+
+  .props .name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 6px;
+  }
+
+  /* Step-styled ordered list */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    margin: 12px 0 14px;
+    padding: 0;
+  }
+
+  .steps > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--brand-primary);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: var(--font-display);
+    line-height: 1;
+  }
+
+  .steps ul {
+    list-style: disc;
+    margin: 6px 0 0 20px;
+  }
+
+  /* Callouts */
+  .callout {
+    border-left: 3px solid;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 18px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .callout-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    margin-top: 1px;
+  }
+
+  .callout-body { flex: 1; }
+
+  .callout-body strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .callout-tip { background: var(--brand-primary-wash); border-color: var(--brand-primary-deep); }
+  .callout-tip strong { color: var(--brand-primary-deep); }
+
+  .callout-info { background: var(--brand-primary-wash); border-color: var(--brand-primary); }
+  .callout-info strong { color: var(--brand-primary); }
+
+  .callout-warning { background: var(--orange-wash); border-color: var(--orange); }
+  .callout-warning strong { color: var(--orange); }
+
+  .callout-note { background: var(--brand-accent-wash); border-color: var(--brand-accent); }
+  .callout-note strong { color: var(--brand-primary-deep); }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  th {
+    background: var(--brand-primary);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border-subtle);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+
+  tbody tr:nth-child(even) { background: var(--bg-soft); }
+
+  td strong { color: var(--text-primary); }
+
+  td code {
+    background: var(--bg-soft);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12.5px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+  }
+
+  /* Screenshot placeholders */
+  figure { margin: 18px 0; }
+
+  .screenshot-placeholder {
+    border: 2px dashed var(--border-medium);
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: border-color var(--transition-base), background var(--transition-base);
+  }
+
+  .screenshot-placeholder:hover {
+    border-color: var(--brand-primary-light);
+    background: var(--brand-primary-wash);
+  }
+
+  .screenshot-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-page);
+    color: var(--brand-primary);
+    margin-bottom: 10px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .screenshot-caption {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-style: normal;
+  }
+
+  .screenshot-filename {
+    display: inline-block;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    background: var(--bg-page);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid var(--border-subtle);
+    margin-top: 4px;
+  }
+
+  .screenshot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 720px) {
+    .screenshot-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ====================================================================
+     RIGHT TOC
+     ==================================================================== */
+  .toc {
+    position: sticky;
+    top: var(--topbar-height);
+    height: calc(100vh - var(--topbar-height));
+    overflow-y: auto;
+    padding: 32px 20px 40px 12px;
+    font-size: 12.5px;
+  }
+
+  .toc-label {
+    font-family: var(--font-display);
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    padding-left: 12px;
+  }
+
+  .toc-list { list-style: none; border-left: 1px solid var(--border-subtle); margin: 0; padding: 0; }
+  .toc-list li { margin: 0; }
+
+  .toc-list a {
+    display: block;
+    padding: 5px 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.45;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    font-size: 12.5px;
+  }
+
+  .toc-list a:hover { color: var(--text-primary); }
+
+  .toc-list a.active {
+    color: var(--brand-primary);
+    border-left-color: var(--brand-primary);
+    font-weight: 600;
+  }
+
+  /* Cover logo */
+  .cover-logo {
+    display: block;
+    height: 64px;
+    width: auto;
+    margin-bottom: 32px;
+    transition: filter var(--transition-base);
+  }
+
+  [data-theme="dark"] .cover-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  /* ====================================================================
+     CLOSING PAGE
+     ==================================================================== */
+  .closing {
+    margin-top: 80px;
+    padding: 56px 32px;
+    background: linear-gradient(135deg, var(--brand-primary-wash) 0%, var(--bg-soft) 100%);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .closing h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 44px;
+    color: var(--brand-primary);
+    margin-bottom: 16px;
+    border: none;
+    padding: 0;
+    line-height: 1.1;
+  }
+
+  .closing-contact {
+    margin-top: 28px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .closing-contact strong { color: var(--text-primary); }
+
+  .closing-contact a {
+    color: var(--brand-primary);
+    text-decoration: none;
+  }
+
+  .closing-contact a:hover { text-decoration: underline; }
+
+  /* ====================================================================
+     FOOTER
+     ==================================================================== */
+  .footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 28px 48px;
+    margin-top: 56px;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    text-align: center;
+  }
+
+  .footer a { color: var(--brand-primary); text-decoration: none; }
+
+  /* ====================================================================
+     RESPONSIVE
+     ==================================================================== */
+  @media (max-width: 1180px) {
+    .layout { grid-template-columns: var(--sidebar-width) minmax(0, 1fr); }
+    .toc { display: none; }
+    .content { padding: 28px 36px 80px; }
+  }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: var(--topbar-height);
+      width: 84%;
+      max-width: 320px;
+      background: var(--bg-page);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      z-index: 90;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sidebar.open { transform: translateX(0); }
+
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: var(--topbar-height) 0 0 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 85;
+    }
+
+    .sidebar-backdrop.show { display: block; }
+    .mobile-menu-btn { display: grid; }
+
+    .content { padding: 20px 18px 64px; }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 21px; }
+
+    .topbar-search { display: none; }
+    .topbar { padding: 0 14px; gap: 10px; }
+    .topbar-title-sub { display: none; }
+    .closing { padding: 36px 20px; }
+    .closing h2 { font-size: 32px; }
+  }
+
+  @media print {
+    .topbar, .sidebar, .toc, .scroll-progress { display: none; }
+    .content { padding: 0; max-width: none; }
+    .screenshot-placeholder { border-style: solid; }
+    a { color: inherit; }
+  }
+
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--brand-primary);
+    width: 0%;
+    z-index: 200;
+    transition: width 0.05s linear;
+  }
+
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="topbar">
+  <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <a href="#cover" class="topbar-brand">
+    <img class="topbar-logo" src="images/simplify-group-logo.png" alt="Simplify Group™" />
+    <div class="topbar-divider"></div>
+    <div class="topbar-title">
+      <span class="topbar-title-main">HubSpot CRM Guide</span>
+      <span class="topbar-title-sub">2026</span>
+    </div>
+  </a>
+
+  <div class="topbar-search">
+    <svg class="topbar-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="sidebarSearch" placeholder="Search the guide..." />
+    <span class="topbar-search-kbd">/</span>
+  </div>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+      <svg id="themeIconLight" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="themeIconDark" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="icon-btn" onclick="window.print()" aria-label="Print">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <div class="sidebar-group">
+        <a href="#cover" class="sidebar-link">Cover</a>
+        <a href="#contents" class="sidebar-link">Table of Contents</a>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Sections 1–9</div>
+        <a href="#sec-1" class="sidebar-link">1. Contact Module Properties</a>
+        <a href="#sec-2" class="sidebar-link">2. Company Module Properties</a>
+        <a href="#sec-3" class="sidebar-link">3. Deal Module Properties</a>
+        <a href="#sec-4" class="sidebar-link">4. Associate Deal with Company</a>
+        <a href="#sec-5" class="sidebar-link">5. How to Log Activities</a>
+        <a href="#sec-6" class="sidebar-link">6. Meeting Link in Email</a>
+        <a href="#sec-7" class="sidebar-link">7. Log and Make Calls</a>
+        <a href="#sec-8" class="sidebar-link">8. Outlook &amp; Office 365</a>
+        <a href="#sec-9" class="sidebar-link">9. Call Recording Sync</a>
+      </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Breeze AI <span class="new-pill">★ NEW</span></div>
+        <a href="#sec-10" class="sidebar-link">10. Breeze AI Overview</a>
+        <a href="#sec-11" class="sidebar-link">11. Breeze Prospecting Agent</a>
+        <a href="#sec-12" class="sidebar-link">12. Sales Workspace</a>
+        <a href="#sec-13" class="sidebar-link">13. Breeze Intelligence</a>
+        <a href="#sec-14" class="sidebar-link">14. Breeze Assistant</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- COVER ============================================ -->
+      <section id="cover">
+        <div class="breadcrumbs">
+          <a href="#cover">Home</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span class="breadcrumbs-current">HubSpot CRM Guide 2026</span>
+        </div>
+
+        <img class="cover-logo" src="images/simplify-group-logo.png" alt="Simplify Group™" />
+        <h1>HubSpot CRM Guide 2026</h1>
+        <p style="font-size: 17px; color: var(--text-secondary); margin-top: 4px;">Updated with Breeze AI &amp; Prospecting Agent</p>
+      </section>
+
+      <!-- TABLE OF CONTENTS ============================================ -->
+      <div class="section-divider"></div>
+      <section id="contents">
+        <h2>Table of Contents <a href="#contents" class="heading-anchor">#</a></h2>
+        <div class="table-wrap" style="margin-top: 16px;">
+          <table>
+            <thead>
+              <tr><th>Topic</th><th style="text-align: right; width: 60px;">Pg.</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="#sec-1" style="color: var(--brand-primary); text-decoration: none;">1. Top Properties in Contact Module</a></td><td style="text-align: right;">05</td></tr>
+              <tr><td><a href="#sec-2" style="color: var(--brand-primary); text-decoration: none;">2. Top Properties in Company Module</a></td><td style="text-align: right;">07</td></tr>
+              <tr><td><a href="#sec-3" style="color: var(--brand-primary); text-decoration: none;">3. Top Properties in Deal Module</a></td><td style="text-align: right;">09</td></tr>
+              <tr><td><a href="#sec-4" style="color: var(--brand-primary); text-decoration: none;">4. How to Associate a Deal with the Company</a></td><td style="text-align: right;">12</td></tr>
+              <tr><td><a href="#sec-5" style="color: var(--brand-primary); text-decoration: none;">5. How to Log Activities</a></td><td style="text-align: right;">13</td></tr>
+              <tr><td><a href="#sec-6" style="color: var(--brand-primary); text-decoration: none;">6. How to Add a Meeting Link in Email</a></td><td style="text-align: right;">16</td></tr>
+              <tr><td><a href="#sec-7" style="color: var(--brand-primary); text-decoration: none;">7. How to Log and Make Calls</a></td><td style="text-align: right;">20</td></tr>
+              <tr><td><a href="#sec-8" style="color: var(--brand-primary); text-decoration: none;">8. HubSpot Sales Integration with Outlook &amp; Office 365</a></td><td style="text-align: right;">22</td></tr>
+              <tr><td><a href="#sec-9" style="color: var(--brand-primary); text-decoration: none;">9. Call Recording Sync with HubSpot</a></td><td style="text-align: right;">28</td></tr>
+              <tr><td><a href="#sec-10" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 10. Breeze AI Overview</a></td><td style="text-align: right;">30</td></tr>
+              <tr><td><a href="#sec-11" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 11. Breeze Prospecting Agent</a></td><td style="text-align: right;">32</td></tr>
+              <tr><td><a href="#sec-12" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 12. Sales Workspace &amp; Smart Deal Progression</a></td><td style="text-align: right;">34</td></tr>
+              <tr><td><a href="#sec-13" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 13. Breeze Intelligence &amp; Data Enrichment</a></td><td style="text-align: right;">36</td></tr>
+              <tr><td><a href="#sec-14" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 14. Breeze Assistant (formerly Copilot)</a></td><td style="text-align: right;">38</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 1 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-1">
+        <div class="section-head">
+          <div class="section-num">1</div>
+          <h2>Top Properties in Contact Module <a href="#sec-1" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>Key sections within the Contact module:</p>
+        <ul>
+          <li>About This Contact</li>
+          <li>Status</li>
+          <li>Events</li>
+          <li>Address</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Contact module overview in HubSpot CRM</div>
+            <span class="screenshot-filename">images/01-contact-module-overview.png</span>
+          </div>
+        </figure>
+
+        <h3>Under the Status Section — Key Properties</h3>
+        <ol class="props">
+          <li><span class="name">Lifecycle Stage:</span> Lead / MQL / SQL / Opportunity / Customer / Others (Ex-customer)</li>
+          <li><span class="name">Need to Connect:</span> Attempted to Contact, Connected, Opened Deal/Opportunity, Not Interested/Bad Timing, Competitor, Retired</li>
+          <li><span class="name">Key Exec:</span> Yes/No — VP or above and is the decision maker</li>
+          <li><span class="name">Key Contact:</span> Yes/No — key stakeholder from the company</li>
+          <li><span class="name">Simplify Healthcare Executive Affinity:</span> Select from dropdown: Ashish Desai, Harry Jordan, Mohammed Vaid, Namrata Dhanawade, Ruchir Rajan, etc.</li>
+          <li><span class="name">Buyer Type:</span> Blocker, Budget Owner, Champion, Decision-Maker, End-User, Exec Sponsor, Influencer, Procurement/Compliance/Legal</li>
+          <li><span class="name">Responsibility:</span> Account Mgmt., Actuarial &amp; Underwriting, Analyst, Analytics, Appeals/Grievances, Audit, Business Development, Business Transformation, Claims, Client Setup, Communications, Compliance, Consultant, Customer Service, Data, Developer, Digital, Enrollment, Exec Admin, Executive, Finance, Legal, IT/Architecture/Security, Marketing, Operations, Payments, Procurement, Product, Program Mgmt., Provider/Networks, Regulatory, Sales, Star Ratings, Strategy, Value-Based Care</li>
+          <li><span class="name">Next Step:</span> Send warm email/call, Connect/Reconnect, Conduct Discovery Assessment, Schedule demo, Demo scheduled, Demo follow-up, Opportunity created, Propel deal, Engaged/current client, BNi Demo, AI Feature Showcase, Executive Briefing</li>
+          <li><span class="name">Line of Business:</span> Select the appropriate LOB</li>
+          <li><span class="name">Sentiment:</span> Positive, Negative, or Neutral</li>
+          <li><span class="name">POD Members Benefits1™ / Provider1™ / Xperience1™:</span> For BizDev team — select appropriate POD details</li>
+          <li><span class="name">BizDev Owner:</span> For BizDev team — select the BD team member</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Status section showing all key contact properties</div>
+            <span class="screenshot-filename">images/02-contact-status-section.png</span>
+          </div>
+        </figure>
+      </section>
+
+      <!-- SECTION 2 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-2">
+        <div class="section-head">
+          <div class="section-num">2</div>
+          <h2>Top Properties in Company Module <a href="#sec-2" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>Key sections within the Company module:</p>
+        <ul>
+          <li>About This Company</li>
+          <li>Sales Team</li>
+          <li>Client Team Members</li>
+          <li>Licensed Spaces</li>
+          <li>Membership</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Company module — full view showing all key sections</div>
+            <span class="screenshot-filename">images/03-company-module-overview.png</span>
+          </div>
+        </figure>
+
+        <h3>About This Company — Key Properties</h3>
+        <ol class="props">
+          <li><span class="name">Type:</span> Customer, Prospect, Former Customer, Competitor, Partner, Partner Prospect, Vendor, Not Relevant, Other</li>
+          <li><span class="name">Lifecycle Stage:</span> Subscriber, Lead, MQL, SQL, Opportunity, Customer, Evangelist, Other</li>
+          <li><span class="name">Segment:</span> Behavioral, Broker, Dental, Health Plan, Health System, P&amp;C, PBM, Senior Living, TPA, Vision, Wellness, ASO/Self-Funded, Medicare Supplement</li>
+          <li><span class="name">Top 10 Target Company:</span> Yes or No</li>
+          <li><span class="name">Target Account:</span> True or False</li>
+          <li><span class="name">Target Account Support Team:</span> Sales, Client Team, Inside Sales, or Marketing</li>
+          <li><span class="name">Target LOBs:</span> ACA, Commercial (Large Group / Small Group / ASO), Medicaid, Medicare Advantage, Medigap, Provider</li>
+          <li><span class="name">Target Modules:</span> All solution modules — select the right product from the dropdown</li>
+          <li><span class="name">Project List:</span> AEP Medicare readiness, Benefits SoT, Claims config automation, Customer service benefits explainer, Data integration, Digitization, Document Mgmt., Enrollment automation, Filings, Market expansion, Member appeals &amp; grievances, Membership growth, New group onboarding automation, PBP bid automation, Portal integration, Product/plan config, Provider claims config, Provider contract mgmt., Provider customer service, Provider directory, Provider disputes &amp; grievances, Provider doc gen, Provider integrations, Provider SoT, Reporting, Sales proposal automation, Web portal integration/automation</li>
+          <li><span class="name">Sales Team:</span> Tag Company owner; add Inside Sales reps doing outreach if applicable</li>
+          <li><span class="name">Client Team Members:</span> Tag Client Partner, Client Delivery Exec, and Client Delivery Manager</li>
+          <li><span class="name">Licensed Spaces:</span> Filled by Account/Deal owner. Includes: First Contract Signed, LOBs Licensed, Modules Licensed, Documents in SOW, Integrations in SOW, Plans, PBPs, In Production (Yes/No), Modules/Documents/Integrations in Production</li>
+          <li><span class="name">Membership:</span> Updated by Marketing team based on AIS data directory</li>
+        </ol>
+      </section>
+
+      <!-- SECTION 3 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-3">
+        <div class="section-head">
+          <div class="section-num">3</div>
+          <h2>Top Properties in Deal Section <a href="#sec-3" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>Key sections within the Deal module:</p>
+        <ul>
+          <li>About This Deal (Left section)</li>
+          <li>Contacts (Right Section)</li>
+          <li>Companies (Right Section)</li>
+          <li>Attachment (Right Section)</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Deal section — full view with all properties</div>
+            <span class="screenshot-filename">images/04-deal-module-overview.png</span>
+          </div>
+        </figure>
+
+        <h3>About This Deal (Left Section)</h3>
+        <ol class="props">
+          <li><span class="name">Deal Owner:</span> Select Account owner from dropdown</li>
+          <li><span class="name">Deal Name:</span> Company name + Product name, e.g. BCBS MA eClaimsEngine™</li>
+          <li><span class="name">LOB:</span> Commercial (Large Group, Small Group, ASO), Medicare Advantage, Medicaid, ACA/Individual, Medigap, Provider, Services</li>
+          <li><span class="name">Product:</span> Domain Platforms: Benefits1™ (Large Group, ACA, Medicare Advantage, Medigap, Medicaid), Provider1™ (Provider Lifecycle Management), Claims1™ (Claims Lifecycle Management), Xperience1™ (Customer Experience / Benefits Inquiry), Insights1™ (Payer Performance Management). Foundation Platforms: Context1™ (Payer Ontology &amp; Data Activation), Foundry1™ (Agentic Automation &amp; Platform Intelligence). Delivery Services: Simplify Docs™ (Document Management), Simplify Alpha™ (Solutions as a Service), Advisory Services</li>
+          <li><span class="name">In Flight:</span> Yes or No</li>
+          <li><span class="name">Win Percentage:</span> 0% to 100% — manually set by deal owner based on pipeline stage</li>
+          <li><span class="name">AI Deal Score:</span> Breeze AI-generated probability score based on engagement signals, deal stage velocity, and historical win patterns (available in Sales Hub Pro+)</li>
+          <li><span class="name">Forecast Category:</span> Closed Won, Commit, Best Case, Pipeline, or Omitted — used for revenue forecasting</li>
+          <li><span class="name">Deal Health Score:</span> AI-powered health indicator: On Track, At Risk, or Critical — based on last activity, next meeting, and stakeholder engagement</li>
+          <li><span class="name">Milestone:</span> Current status note</li>
+          <li><span class="name">Probability:</span> Most Likely-Commit, Upside, or Exploratory-Stretch</li>
+          <li><span class="name">Quarter Close:</span> Q1, Q2, Q3, or Q4</li>
+          <li><span class="name">Deal Type:</span> New Business, Add-on, or Renewal</li>
+          <li><span class="name">Term Software Fees Year 1</span></li>
+          <li><span class="name">Term Imp. Fees Year 1</span></li>
+          <li><span class="name">Term Imp. Svcs. Add-on Fees</span></li>
+          <li><span class="name">Term Services Type:</span> Cap, Fixed Fee, or T&amp;M</li>
+          <li><span class="name">Term in Years</span></li>
+          <li><span class="name">Term Total Amount</span></li>
+          <li><span class="name">Monthly Subscription Value</span></li>
+          <li><span class="name">Monthly Subscription in Month:</span> Number of months</li>
+          <li><span class="name">Monthly Subscription (Total Years Value)</span></li>
+          <li><span class="name">Lead Creation Date</span></li>
+          <li><span class="name">First Demo Date</span></li>
+          <li><span class="name">Proposal Delivery Date</span></li>
+          <li><span class="name">Contract Delivery Date</span></li>
+          <li><span class="name">Close Date</span></li>
+          <li><span class="name">Implementation Start Date</span></li>
+          <li><span class="name">Renewal Date</span></li>
+          <li><span class="name">Next Step:</span> Create a note/message here</li>
+          <li><span class="name">Client Partner</span></li>
+          <li><span class="name">Client Delivery Executive</span></li>
+          <li><span class="name">Client Delivery Manager</span></li>
+          <li><span class="name">Lost Reason:</span> Select the most relevant reason if deal is lost</li>
+          <li><span class="name">Deal Stage:</span> 0% to 100%</li>
+          <li><span class="name">Deal Source:</span> Which source generated this deal</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Deal properties — dates, deal stage, and financial fields</div>
+            <span class="screenshot-filename">images/05-deal-properties-detail.png</span>
+          </div>
+        </figure>
+
+        <h3>Right Sections</h3>
+        <p><strong>Contacts:</strong> Add the names of contacts you are in touch with for this deal.</p>
+        <p><strong>Companies:</strong> Select the company associated with the deal.</p>
+        <p><strong>Attachment:</strong> Add any documents or files to share with the client via HubSpot.</p>
+      </section>
+
+      <!-- SECTION 4 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-4">
+        <div class="section-head">
+          <div class="section-num">4</div>
+          <h2>How to Associate a Deal with the Company <a href="#sec-4" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>Ensure your deal is properly associated with the company. If not linked, HubSpot will be unable to track data related to the deal and account activities.</p>
+
+        <ol class="steps">
+          <li>Open the Deal record</li>
+          <li>Click "Add" in the Companies panel on the right-hand side</li>
+          <li>Enter the accurate account name in the search bar</li>
+          <li>Select the appropriate account from the results</li>
+        </ol>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Step 1 — Click Add in Companies panel</div>
+              <span class="screenshot-filename">images/06-deal-add-company.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Step 2 — Search and select account</div>
+              <span class="screenshot-filename">images/07-deal-search-account.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="callout-body">
+            <strong>⚠ Important</strong>
+            Always verify the company association before saving. An unlinked deal cannot be properly tracked or reported in HubSpot.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-5">
+        <div class="section-head">
+          <div class="section-num">5</div>
+          <h2>How to Log Activities <a href="#sec-5" class="heading-anchor">#</a></h2>
+        </div>
+
+        <h3>Logging a Task or Demo</h3>
+        <ol class="steps">
+          <li>Open the corresponding Deal, Account, or Contact</li>
+          <li>Click on the Tasks tab</li>
+          <li>Add subject line, notes, and task owner</li>
+          <li>Assign the task to a team member by clicking "Assigned to"</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Task creation panel — subject line, due date, assignee</div>
+            <span class="screenshot-filename">images/08-task-creation-panel.png</span>
+          </div>
+        </figure>
+
+        <h3>Logging a Meeting</h3>
+        <ol class="steps">
+          <li>Select "Log Meeting" to record an existing meeting</li>
+          <li>To create a new meeting, ensure Outlook or Gmail is connected to HubSpot first</li>
+          <li>Click "Log Meeting" and fill in attendees, outcome, type, date, and time</li>
+          <li>Associate the contacts you connected with during the meeting</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Log Meeting panel — associated with deal record</div>
+            <span class="screenshot-filename">images/09-log-meeting-panel.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-note">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Note</strong>
+            To set up meeting creation, go to Settings → Calendar → Connect Your Calendar.
+          </div>
+        </div>
+
+        <h3>Connecting Your Calendar</h3>
+        <ol class="steps">
+          <li>Click "Create a Meeting" to reach the calendar setup page</li>
+          <li>Select "Connect Your Calendar"</li>
+          <li>Choose your provider — Google/Gmail, Microsoft Outlook, or Exchange</li>
+          <li>Click "Connect Your Calendar" and sign in</li>
+          <li>You are now ready to create meetings directly from HubSpot</li>
+          <li>Use "Attendees" when creating a meeting to add deal or account contacts</li>
+        </ol>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Calendar connection screen</div>
+              <span class="screenshot-filename">images/10-calendar-connect.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Choose Google / Outlook / Exchange</div>
+              <span class="screenshot-filename">images/11-calendar-provider-choice.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Microsoft account sign-in</div>
+              <span class="screenshot-filename">images/12-microsoft-signin.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Calendar connected — ready to use</div>
+              <span class="screenshot-filename">images/13-calendar-connected.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout callout-tip">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><polyline points="9 7 12 4 15 7"/><line x1="12" y1="4" x2="12" y2="16"/></svg></div>
+          <div class="callout-body">
+            <strong>Tip</strong>
+            Sending meeting invitations from HubSpot tracks all meetings automatically in both HubSpot and your calendar.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-6">
+        <div class="section-head">
+          <div class="section-num">6</div>
+          <h2>How to Add a Meeting Link in Email <a href="#sec-6" class="heading-anchor">#</a></h2>
+        </div>
+
+        <ol class="steps">
+          <li>Click "Email" then "Create an email"</li>
+          <li>Click "Meeting" — two sub-options appear:
+            <ul>
+              <li>Insert Proposed Time — specify slots; recipients click to confirm.</li>
+              <li>Insert Scheduling Link — recipients access your calendar and pick their time.</li>
+            </ul>
+          </li>
+          <li>"Manage Meeting Link" — set availability, configure confirmation and reminder emails</li>
+          <li>Edit the link text, e.g., "Meet with [Your Name]"</li>
+        </ol>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Email composer — Meeting options</div>
+              <span class="screenshot-filename">images/14-email-meeting-options.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Insert scheduling link — edit link text</div>
+              <span class="screenshot-filename">images/15-scheduling-link-edit.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <h3>Insert Proposed Time</h3>
+        <p>After clicking Insert Proposed Time, a calendar opens. Select available slots and click Insert Times. Slots appear inline in the email — recipients click any slot to confirm.</p>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Select times calendar view — choose available slots</div>
+            <span class="screenshot-filename">images/16-select-times-calendar.png</span>
+          </div>
+        </figure>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Manage Meeting Link — Automation tab with reminder email settings</div>
+            <span class="screenshot-filename">images/17-manage-meeting-link.png</span>
+          </div>
+        </figure>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Insert proposed time option in email</div>
+              <span class="screenshot-filename">images/18-insert-proposed-time.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Multiple time slots shown in email body</div>
+              <span class="screenshot-filename">images/19-time-slots-in-email.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <h3>Scheduling Page Settings</h3>
+        <ul>
+          <li>Scheduling page URL — your custom availability link</li>
+          <li>Duration options — 15 min, 30 min, 60 min</li>
+          <li>Time zone — set automatically from HubSpot settings</li>
+          <li>Availability window — e.g., Mon–Fri 9:00 AM–5:00 PM</li>
+          <li>Confirmation email — sent automatically upon booking</li>
+          <li>Pre-meeting reminder — configurable (default: 1 hour before)</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 7 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-7">
+        <div class="section-head">
+          <div class="section-num">7</div>
+          <h2>How to Log and Make Calls <a href="#sec-7" class="heading-anchor">#</a></h2>
+        </div>
+
+        <h3>Logging a Call</h3>
+        <ul>
+          <li>Navigate to the Contact, Company, or Deal record</li>
+          <li>Click the "Calls" tab then "Log a Call"</li>
+          <li>Use the Call Outcome dropdown to categorise the call</li>
+          <li>Fill in call description, date, and time</li>
+          <li>Click "Log Activity" to save</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Log Call panel — outcome, type, direction, date and description</div>
+            <span class="screenshot-filename">images/20-log-call-panel.png</span>
+          </div>
+        </figure>
+
+        <h3>Activating the Calling Function</h3>
+        <ol class="steps">
+          <li>Click the "Calling" tab within a Contact or Deal record</li>
+          <li>If not yet set up, click "Make a Phone Call"</li>
+          <li>Click "Set Up My Own Number"</li>
+          <li>Enter your phone number and extension (if applicable)</li>
+          <li>Choose verification method — SMS or phone call</li>
+          <li>Click "Text me" or "Call me" to receive your verification code</li>
+          <li>Enter the verification code to complete setup</li>
+        </ol>
+      </section>
+
+      <!-- SECTION 8 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-8">
+        <div class="section-head">
+          <div class="section-num">8</div>
+          <h2>HubSpot Sales Integration with Outlook and Office 365 <a href="#sec-8" class="heading-anchor">#</a></h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Outlook Desktop Add-in</th>
+                <th>Office 365 Add-in</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Email host</strong></td>
+                <td>Any</td>
+                <td>Office 365</td>
+              </tr>
+              <tr>
+                <td><strong>Email client</strong></td>
+                <td>Outlook 2019 / 2016 / 2013</td>
+                <td>Outlook on the Web, Outlook.com*<br>Outlook for Mac (v15.33+)<br>Outlook for PC (v1603 / build 6769.0000+)</td>
+              </tr>
+              <tr>
+                <td><strong>Operating system</strong></td>
+                <td>PC only</td>
+                <td>Mac, PC</td>
+              </tr>
+              <tr>
+                <td><strong>System requirements</strong></td>
+                <td>Windows 7/8/10<br>Outlook 2013+<br>Visual Studio 2010 Tools<br>.NET 4.6+</td>
+                <td>N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Method 1 — Outlook Desktop Add-in (Windows Only)</h3>
+        <ol class="steps">
+          <li>Download and install the HubSpot Outlook Desktop Add-in from the HubSpot marketplace</li>
+          <li>Run the setup installer</li>
+          <li>Restart Outlook — it will prompt for your HubSpot credentials</li>
+          <li>"HubSpot Sales" will appear in your inbox ribbon once installed</li>
+          <li>View your activity feed by clicking the HubSpot sprocket in your Windows system tray</li>
+          <li>The sprocket changes from gray to orange when active — ensure it is enabled</li>
+          <li>Emails sent with HubSpot tracking will auto-BCC to your portal (6655148@bcc.hubspot.com)</li>
+        </ol>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">HubSpot Sales add-in in Outlook ribbon</div>
+              <span class="screenshot-filename">images/21-outlook-ribbon.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">HubSpot Sales panel with message tools</div>
+              <span class="screenshot-filename">images/22-hubspot-sales-panel.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout callout-note">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Note</strong>
+            Outlook for Mac is NOT supported by the Desktop Add-in. Mac users should use Method 2.
+          </div>
+        </div>
+
+        <h3>Method 2 — Office 365 Add-in</h3>
+        <ol class="steps">
+          <li>Go to Microsoft AppSource and search for "HubSpot Sales"</li>
+          <li>Click "Get It Now"</li>
+          <li>Enter your official email address and click Sign in</li>
+          <li>After confirming your email, click "Get It Now" again to complete installation</li>
+        </ol>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">HubSpot Sales in Microsoft AppSource</div>
+              <span class="screenshot-filename">images/23-appsource-listing.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Sign in to Microsoft AppSource</div>
+              <span class="screenshot-filename">images/24-appsource-signin.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Confirm details — Get it now</div>
+              <span class="screenshot-filename">images/25-confirm-details.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Successfully added to account</div>
+              <span class="screenshot-filename">images/26-installation-success.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="callout-body">
+            <strong>⚠ Important</strong>
+            Do NOT install both add-ins on the same device — they will conflict and cause issues.
+          </div>
+        </div>
+
+        <h3>Connecting Office 365 to HubSpot CRM</h3>
+        <ol class="steps">
+          <li>Click Settings (cog icon, top right)</li>
+          <li>Click General → Email Integrations</li>
+          <li>"Connect an inbox" → Connect personal email</li>
+          <li>Select Office 365 and enable it</li>
+          <li>Follow the instructions and choose the appropriate inbox</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">HubSpot Settings — Email integration showing Office 365 connected</div>
+            <span class="screenshot-filename">images/27-email-integration-settings.png</span>
+          </div>
+        </figure>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Email settings — connected inbox with Inbox Automation toggle</div>
+            <span class="screenshot-filename">images/28-inbox-automation-toggle.png</span>
+          </div>
+        </figure>
+
+        <h3>Troubleshooting — Emails Not Tracked</h3>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Troubleshooting — Track email checkbox and HubSpot message tools panel</div>
+            <span class="screenshot-filename">images/29-troubleshooting-track-email.png</span>
+          </div>
+        </figure>
+
+        <ol class="steps">
+          <li>Ensure HubSpot Sales for Windows is installed</li>
+          <li>If tray icon is grayed out, right-click sprocket → Enable Notifications</li>
+          <li>Before sending, ensure the "Track email" checkbox is selected</li>
+          <li>If still not tracked, reinstall the HubSpot Outlook Add-in</li>
+        </ol>
+      </section>
+
+      <!-- SECTION 9 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-9">
+        <div class="section-head">
+          <div class="section-num">9</div>
+          <h2>Call Recording Sync with HubSpot <a href="#sec-9" class="heading-anchor">#</a></h2>
+        </div>
+
+        <h3>Making and Recording a Call</h3>
+        <ul>
+          <li>Click "Make a Phone Call" on a contact or deal record</li>
+          <li>Click the "Record" button to begin recording</li>
+          <li>Accept the consent pop-up — always inform the other party before recording</li>
+          <li>Take notes during the call in the Notes panel</li>
+          <li>After the call, select the outcome and call type, then click Save Call</li>
+          <li>Review call details and recordings in the Activity or Calls tab</li>
+        </ul>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Active call interface with Record button</div>
+              <span class="screenshot-filename">images/30-active-call-record.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Consent pop-up</div>
+              <span class="screenshot-filename">images/31-consent-popup.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Call notes panel during active call</div>
+              <span class="screenshot-filename">images/32-call-notes.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Post-call summary</div>
+              <span class="screenshot-filename">images/33-post-call-summary.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Call outcome and type selection</div>
+              <span class="screenshot-filename">images/34-call-outcome.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Call saved — Review recording link visible</div>
+              <span class="screenshot-filename">images/35-call-saved.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Call recording playback panel</div>
+              <span class="screenshot-filename">images/36-recording-playback.png</span>
+            </div>
+          </figure>
+          <figure>
+            <div class="screenshot-placeholder">
+              <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="screenshot-caption">Activity feed showing call</div>
+              <span class="screenshot-filename">images/37-activity-feed-call.png</span>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="callout-body">
+            <strong>⚠ Important</strong>
+            Some countries and states require two-party consent to record calls. Always inform the other party before recording.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 10 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-10">
+        <div class="section-head">
+          <div class="section-num new">10</div>
+          <h2>Breeze AI Overview <span class="new-tag">★ NEW</span> <a href="#sec-10" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>HubSpot's <strong>Breeze</strong> is the AI engine powering the entire HubSpot customer platform. Launched at INBOUND 2024 and expanded through 2025–2026, Breeze is organised into three integrated layers:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Breeze Component</th>
+                <th>Description</th>
+                <th>Access</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Breeze Assistant</strong><br><span style="font-size: 12px; color: var(--text-muted);">(formerly Copilot)</span></td>
+                <td>Personal AI companion in HubSpot. Summarizes call history, drafts follow-ups, answers CRM questions. Features persistent memory, web search, file upload, integrations with Google Workspace, M365, and Slack.</td>
+                <td>Free tier on all plans</td>
+              </tr>
+              <tr>
+                <td><strong>Breeze Agents</strong><br><span style="font-size: 12px; color: var(--text-muted);">(4 primary agents)</span></td>
+                <td>AI teammates that handle full workflows:<br>• Prospecting Agent &nbsp; • Content Agent<br>• Customer Agent &nbsp; • Knowledge Base Agent</td>
+                <td>Professional &amp; Enterprise plans</td>
+              </tr>
+              <tr>
+                <td><strong>Breeze Intelligence</strong></td>
+                <td>Data enrichment engine. Pulls from 200M+ buyer and company profiles to enrich CRM records, score leads, and surface companies showing purchase intent.</td>
+                <td>From $42/mo for 100 credits</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Breeze AI Overview — Breeze Studio dashboard showing all three layers: Assistant, Agents, and Intelligence</div>
+            <span class="screenshot-filename">images/38-breeze-studio-dashboard.png</span>
+          </div>
+        </figure>
+
+        <h3>Accessing Breeze AI in HubSpot</h3>
+        <ul>
+          <li>Breeze Assistant — available in any HubSpot tool via the sidebar icon</li>
+          <li>Breeze Copilot (basic tier) — free on all HubSpot plans</li>
+          <li>Full Breeze Agents — requires Professional or Enterprise plan</li>
+          <li>Breeze Intelligence credits — from $42/month for 100 credits</li>
+        </ul>
+
+        <h3>Breeze Agents — The Four Primary Agents</h3>
+        <ul>
+          <li><strong>Prospecting Agent:</strong> Researches target accounts, monitors buying signals, personalises outreach, and engages prospects 24/7.</li>
+          <li><strong>Content Agent:</strong> Creates and scales content across channels — blogs, landing pages, emails, podcasts, case studies.</li>
+          <li><strong>Customer Agent:</strong> AI front-office concierge resolving support queries 24/7 across 9+ channels. Resolves 65%+ of conversations.</li>
+          <li><strong>Knowledge Base Agent:</strong> Works with Customer Agent to identify knowledge gaps and auto-draft help articles.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 11 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-11">
+        <div class="section-head">
+          <div class="section-num new">11</div>
+          <h2>Breeze Prospecting Agent <span class="new-tag">★ NEW</span> <a href="#sec-11" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>The <strong>Breeze Prospecting Agent</strong> is a 24/7 AI-powered BDR that understands your business, monitors prospects for buying signals, researches target accounts, personalises outreach, and engages prospects to help sales teams build pipeline faster.</p>
+
+        <h3>What the Prospecting Agent Does</h3>
+        <ul>
+          <li><strong>Automated account research:</strong> Pulls from HubSpot data plus external sources (websites, blog posts, news)</li>
+          <li><strong>Selling profiles:</strong> Customises outreach for different products, personas, and target markets</li>
+          <li><strong>Buying signals:</strong> Identifies job postings, funding rounds, leadership changes, and tech stack changes</li>
+          <li><strong>Buyer committee insights:</strong> Maps every decision-maker in the deal using AI</li>
+          <li><strong>Personalised email drafts:</strong> Full customer context from past CRM interactions</li>
+          <li><strong>Full prospecting lifecycle:</strong> From signal detection to email drafting — all in one place</li>
+        </ul>
+
+        <h3>Where to Access the Prospecting Agent</h3>
+        <ul>
+          <li>Sales Workspace — main dashboard</li>
+          <li>Prospecting Agent app — dedicated interface</li>
+          <li>Target Accounts app — new in 2025</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Breeze Prospecting Agent — Overview dashboard showing contacts researched, emails sent, replies and meetings booked, with live outreach table</div>
+            <span class="screenshot-filename">images/39-prospecting-agent-dashboard.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-info">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Info</strong>
+            28-day free trial available at <strong>$1 per recommended lead</strong> (pay-per-result). Early users report 2× industry benchmark outreach response rates.
+          </div>
+        </div>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Selling Profile setup — define product name, description, AI-generated summary, and target personas</div>
+            <span class="screenshot-filename">images/40-selling-profile-setup.png</span>
+          </div>
+        </figure>
+
+        <h3>Setting Up Selling Profiles</h3>
+        <ol class="steps">
+          <li>Navigate to Settings → Breeze → Prospecting Agent</li>
+          <li>Click "Create Selling Profile"</li>
+          <li>Define target product, ideal customer persona, and target market</li>
+          <li>Add your company's value proposition and differentiators</li>
+          <li>Save and assign the profile to reps or teams</li>
+        </ol>
+
+        <h3>Using the Prospecting Agent — Step by Step</h3>
+        <ol class="steps">
+          <li>Go to Sales Workspace or Prospecting Agent app</li>
+          <li>Select target accounts — agent automatically begins research</li>
+          <li>Review buyer committee insights and signal alerts</li>
+          <li>Review AI-drafted personalised emails for each prospect</li>
+          <li>Edit and send — or enable auto-engagement</li>
+        </ol>
+      </section>
+
+      <!-- SECTION 12 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-12">
+        <div class="section-head">
+          <div class="section-num new">12</div>
+          <h2>Sales Workspace &amp; Smart Deal Progression <span class="new-tag">★ NEW</span> <a href="#sec-12" class="heading-anchor">#</a></h2>
+        </div>
+
+        <h3>Sales Workspace</h3>
+        <p>The <strong>Sales Workspace</strong> is an all-in-one home where sales reps gather context, prioritise prospects, and take action in a unified interface. It replaced the previous Prospecting Workspace and was fully deployed in January 2025.</p>
+
+        <ul>
+          <li><strong>Pipeline management:</strong> View and manage all deals with "Next Meeting" and "Last Activity" columns</li>
+          <li><strong>Prospecting:</strong> Prioritise target accounts with guided AI-generated next actions</li>
+          <li><strong>AI research summaries:</strong> AI-generated company research on deal pages — no manual research needed</li>
+          <li><strong>Guided actions:</strong> Automatically generated suggestions based on deal stage and buyer signals</li>
+        </ul>
+
+        <h3>Smart Deal Progression (New 2025/2026)</h3>
+        <p><strong>Smart Deal Progression</strong> activates after every sales call, analysing the transcript alongside full deal history to provide:</p>
+        <ul>
+          <li><strong>CRM field update suggestions:</strong> Based on what was discussed in the call</li>
+          <li><strong>Follow-up email draft:</strong> Tailored to the conversation context</li>
+          <li><strong>Action items &amp; next steps:</strong> Aligned with pipeline and deal stage definitions</li>
+          <li><strong>Forecasting alignment:</strong> Suggestions based on your pipeline definitions and logic</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Sales Workspace — Pipeline view with Smart Deal Progression banner, deal progress bars, Next Meeting and Last Activity columns</div>
+            <span class="screenshot-filename">images/41-sales-workspace-pipeline.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-tip">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><polyline points="9 7 12 4 15 7"/><line x1="12" y1="4" x2="12" y2="16"/></svg></div>
+          <div class="callout-body">
+            <strong>Tip</strong>
+            Use Smart Deal Progression after every prospect call to keep CRM records current without manual data entry — ensuring accurate pipeline reporting and forecasting.
+          </div>
+        </div>
+
+        <h3>Customer Success Workspace (New 2025)</h3>
+        <p>Dedicated workspace for Customer Success Managers featuring:</p>
+        <ul>
+          <li>Customer health scores (0–100 scale) with configurable factors</li>
+          <li>Schedule, tasks, and books of business in one view</li>
+          <li>Real-time alerts on customer health score changes</li>
+          <li>Multi-team support for large-scale CS organisations</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 13 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-13">
+        <div class="section-head">
+          <div class="section-num new">13</div>
+          <h2>Breeze Intelligence &amp; Data Enrichment <span class="new-tag">★ NEW</span> <a href="#sec-13" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p><strong>Breeze Intelligence</strong> is HubSpot's data enrichment and buyer intent layer, pulling from 200M+ buyer and company profiles.</p>
+
+        <h3>Key Capabilities</h3>
+        <ul>
+          <li><strong>Data Enrichment:</strong> Automatically enriches Company and Contact records with verified data from 200M+ profiles</li>
+          <li><strong>Buyer Intent Scoring:</strong> Surfaces companies showing purchase interest based on website visits and engagement</li>
+          <li><strong>Form Shortening:</strong> Pre-fills web forms to increase conversion rates</li>
+          <li><strong>Lead Scoring:</strong> AI-powered scoring to identify high-engagement, high-fit prospects</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Breeze Intelligence — Buyer Intent tab showing companies with intent scores, pages visited, and one-click enroll to Prospecting Agent</div>
+            <span class="screenshot-filename">images/42-buyer-intent-tab.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-info">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Info</strong>
+            Breeze Intelligence credits start at $42/month for 100 credits. Pay-as-you-go available.
+          </div>
+        </div>
+
+        <h3>Accessing Breeze Intelligence</h3>
+        <ol class="steps">
+          <li>Navigate to any Contact or Company record in HubSpot</li>
+          <li>Click "Enrich" or enable auto-enrichment in Settings → Breeze Intelligence</li>
+          <li>For Buyer Intent, go to Sales → Target Accounts and filter by intent signals</li>
+          <li>Monitor credit usage in Settings → Breeze Intelligence</li>
+        </ol>
+
+        <h3>Using Buyer Intent in Your Workflow</h3>
+        <ol class="steps">
+          <li>Go to Marketing → Breeze Intelligence → Buyer Intent</li>
+          <li>Define intent criteria — select pages to track (pricing, demo, product pages)</li>
+          <li>Review accounts flagged as showing intent</li>
+          <li>Route high-intent accounts to the Prospecting Agent for personalised outreach</li>
+          <li>Set up workflow automations to notify reps when accounts hit intent thresholds</li>
+        </ol>
+      </section>
+
+      <!-- SECTION 14 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-14">
+        <div class="section-head">
+          <div class="section-num new">14</div>
+          <h2>Breeze Assistant (formerly Copilot) <span class="new-tag">★ NEW</span> <a href="#sec-14" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p><strong>Breeze Assistant</strong> is your personal AI chief of staff inside HubSpot — completely rebuilt with persistent memory, advanced research, and connections to your entire business ecosystem.</p>
+
+        <h3>What's New: Breeze Assistant vs. Old Copilot</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Old Copilot</th>
+                <th>New Breeze Assistant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Memory</strong></td><td>Blank slate each session</td><td>Persistent memory across sessions</td></tr>
+              <tr><td><strong>Data access</strong></td><td>HubSpot CRM only</td><td>CRM + Web search + File upload</td></tr>
+              <tr><td><strong>Integrations</strong></td><td>HubSpot only</td><td>Google Workspace, M365, Slack</td></tr>
+              <tr><td><strong>Mobile</strong></td><td>Desktop only</td><td>iOS and Android app</td></tr>
+              <tr><td><strong>Customisation</strong></td><td>None</td><td>Custom Assistants for your business</td></tr>
+              <tr><td><strong>Reliability</strong></td><td>Known quality issues</td><td>Fully rebuilt — high reliability</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Breeze Assistant — Chat panel on a Deal record, summarising last 3 interactions and drafting a personalised follow-up email</div>
+            <span class="screenshot-filename">images/43-breeze-assistant-chat.png</span>
+          </div>
+        </figure>
+
+        <h3>How Breeze Assistant Helps Sales Teams</h3>
+        <ul>
+          <li><strong>Pre-call prep:</strong> Summarises a contact's full history, past emails, notes, and deal activity before every call</li>
+          <li><strong>Decision-maker mapping:</strong> Identifies key decision-makers by analysing CRM data</li>
+          <li><strong>Email drafting:</strong> Drafts personalised follow-up emails based on past interactions</li>
+          <li><strong>Pipeline questions:</strong> Answers questions about deal status, pipeline health, and account history</li>
+          <li><strong>Call briefs:</strong> Prepares context-rich briefs from emails, notes, and activity history</li>
+        </ul>
+
+        <h3>Accessing Breeze Assistant</h3>
+        <ol class="steps">
+          <li>Click the Breeze icon in any HubSpot screen (top navigation or sidebar)</li>
+          <li>Type your question in natural language — e.g., "Summarise my last 3 interactions with BCBS TN"</li>
+          <li>Review the AI response and take action directly in HubSpot</li>
+        </ol>
+
+        <h3>Custom Assistants</h3>
+        <p>Create specialised AI experts trained on your company's specific knowledge:</p>
+        <ul>
+          <li>Go to Settings → Breeze → Custom Assistants</li>
+          <li>Define the assistant's role, knowledge base, and access scope</li>
+          <li>Upload company documents, SOPs, and product info as reference material</li>
+          <li>Assign Custom Assistants to specific teams (Sales, Client Success, BizDev)</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Info</strong>
+            Breeze Copilot (basic features) is free on all plans. Full Breeze Assistant with Custom Assistants is on Professional and Enterprise plans.
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING ============================================ -->
+      <div class="closing">
+        <img class="cover-logo" src="images/simplify-group-logo.png" alt="Simplify Group™" style="margin: 0 auto 24px; height: 56px;" />
+        <h2>Thank You!</h2>
+        <div class="closing-contact">
+          <strong>Simplify Group™</strong><br>
+          U.S.: 600 N Commons Drive, Suite 110, Aurora, IL 60504<br>
+          Canada: 1750-1055 W Georgia St., P.O. Box 11125, Vancouver BC V6E 3P3<br>
+          Pune: 401/402, 4th Floor, Pentagon P-2, Magarpatta City, Pune 411013<br>
+          Mumbai: 1411A/1411B, Lodha New Cuffe Parade, Wadala East, Mumbai 400037<br><br>
+          <strong>(844) 720-6678</strong><br>
+          <a href="mailto:info@simplifygroup.com">info@simplifygroup.com</a><br>
+          <a href="https://simplifygroup.com">simplifygroup.com</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="toc" id="toc">
+    <div class="toc-label">On this page</div>
+    <ul class="toc-list" id="tocList"></ul>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <p>Copyright © 2026 Simplify Group™. All Rights Reserved. | Confidential and Proprietary. <a href="https://simplifygroup.com">simplifygroup.com</a></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ============== Theme ==============
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIconLight = document.getElementById('themeIconLight');
+  const themeIconDark = document.getElementById('themeIconDark');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeIconLight.style.display = theme === 'dark' ? 'none' : 'block';
+    themeIconDark.style.display = theme === 'dark' ? 'block' : 'none';
+  }
+
+  const savedTheme = localStorage.getItem('hubspot-guide-theme') || 'light';
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('hubspot-guide-theme', next);
+  });
+
+  // ============== Mobile menu ==============
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  const menuBtn = document.getElementById('mobileMenuBtn');
+
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    backdrop.classList.remove('show');
+  }
+
+  menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    backdrop.classList.toggle('show');
+  });
+
+  backdrop.addEventListener('click', closeMenu);
+
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 860) closeMenu();
+    });
+  });
+
+  // ============== Search ==============
+  const searchInput = document.getElementById('sidebarSearch');
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const links = document.querySelectorAll('.sidebar-link');
+    const groups = document.querySelectorAll('.sidebar-group');
+
+    if (query === '') {
+      links.forEach(l => l.classList.remove('hidden'));
+      groups.forEach(g => g.style.display = '');
+      return;
+    }
+
+    links.forEach(link => {
+      const text = link.textContent.toLowerCase();
+      link.classList.toggle('hidden', !text.includes(query));
+    });
+
+    groups.forEach(group => {
+      const visibleLinks = group.querySelectorAll('.sidebar-link:not(.hidden)');
+      group.style.display = visibleLinks.length === 0 ? 'none' : '';
+    });
+  });
+
+  // ============== Active section + TOC ==============
+  const sections = document.querySelectorAll('main section[id]');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const tocList = document.getElementById('tocList');
+
+  function generateTocForSection(section) {
+    const h3s = section.querySelectorAll('h3');
+    if (h3s.length === 0) {
+      const h2 = section.querySelector('h2');
+      if (h2) {
+        const title = h2.textContent.replace('#', '').replace('★ NEW', '').trim();
+        tocList.innerHTML = `<li><a href="#${section.id}" class="active">${title}</a></li>`;
+      } else {
+        tocList.innerHTML = '';
+      }
+      return;
+    }
+
+    let html = '';
+    h3s.forEach((h3, i) => {
+      // Generate or use existing ID
+      if (!h3.id) {
+        h3.id = section.id + '-h3-' + i;
+      }
+      const title = h3.textContent.replace('#', '').trim();
+      html += `<li><a href="#${h3.id}"${i === 0 ? ' class="active"' : ''}>${title}</a></li>`;
+    });
+    tocList.innerHTML = html;
+  }
+
+  function setActiveSection(sectionId) {
+    sidebarLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === '#' + sectionId);
+    });
+
+    const section = document.getElementById(sectionId);
+    if (section) generateTocForSection(section);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActiveSection(entry.target.id);
+      }
+    });
+  }, {
+    rootMargin: '-72px 0px -72% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(s => observer.observe(s));
+
+  if (sections.length > 0) {
+    generateTocForSection(sections[0]);
+  }
+
+  // ============== TOC sub-item active state ==============
+  function updateTocActive() {
+    const tocLinks = tocList.querySelectorAll('a');
+    if (tocLinks.length === 0) return;
+
+    let activeHref = null;
+    tocLinks.forEach(a => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 110) {
+        activeHref = a.getAttribute('href');
+      }
+    });
+
+    if (activeHref) {
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === activeHref);
+      });
+    }
+  }
+
+  // ============== Scroll progress + TOC active ==============
+  const scrollProgress = document.getElementById('scrollProgress');
+
+  function onScroll() {
+    const scrolled = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+    updateTocActive();
+  }
+
+  let scrollRaf;
+  window.addEventListener('scroll', () => {
+    if (scrollRaf) cancelAnimationFrame(scrollRaf);
+    scrollRaf = requestAnimationFrame(onScroll);
+  }, { passive: true });
+
+  onScroll();
+
+  // ============== Keyboard shortcuts ==============
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === searchInput) {
+      searchInput.blur();
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
