@@ -1000,6 +1000,11 @@
         <a href="#sec-13" class="sidebar-link">13. Breeze Intelligence</a>
         <a href="#sec-14" class="sidebar-link">14. Breeze Assistant</a>
       </div>
+
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Sales Tools <span class="new-pill">★ NEW</span></div>
+        <a href="#sec-15" class="sidebar-link">15. HubSpot Sequences</a>
+      </div>
     </nav>
   </aside>
 
@@ -1043,6 +1048,7 @@
               <tr><td><a href="#sec-12" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 12. Sales Workspace &amp; Smart Deal Progression</a></td><td style="text-align: right;">34</td></tr>
               <tr><td><a href="#sec-13" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 13. Breeze Intelligence &amp; Data Enrichment</a></td><td style="text-align: right;">36</td></tr>
               <tr><td><a href="#sec-14" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 14. Breeze Assistant (formerly Copilot)</a></td><td style="text-align: right;">38</td></tr>
+              <tr><td><a href="#sec-15" style="color: var(--brand-primary); text-decoration: none;"><span style="color: var(--brand-accent);">★ NEW</span> 15. HubSpot Sequences</a></td><td style="text-align: right;">40</td></tr>
             </tbody>
           </table>
         </div>
@@ -2059,6 +2065,281 @@
             Breeze Copilot (basic features) is free on all plans. Full Breeze Assistant with Custom Assistants is on Professional and Enterprise plans.
           </div>
         </div>
+      </section>
+
+      <!-- SECTION 15 ============================================ -->
+      <div class="section-divider"></div>
+      <section id="sec-15">
+        <div class="section-head">
+          <div class="section-num new">15</div>
+          <h2>HubSpot Sequences <span class="new-tag">★ NEW</span> <a href="#sec-15" class="heading-anchor">#</a></h2>
+        </div>
+
+        <p>The <strong>Sequences</strong> tool runs a series of timed email templates and task reminders against a contact to nurture them over time. A contact who replies to a sequence email or books a meeting via a sequence link is unenrolled automatically. Sequences sit alongside Workflows (HubSpot's broader automation engine) and the two can be wired together when needed.</p>
+
+        <h3>Before you get started</h3>
+        <p>Every user running sequences needs all four of the following:</p>
+        <ul>
+          <li>A Sales Hub or Service Hub subscription at Professional or Enterprise tier</li>
+          <li>An assigned Sales or Service seat</li>
+          <li>Sequences permission enabled by an admin</li>
+          <li>A connected personal email — team inboxes connected through the Conversations tool will not work for sequence sends</li>
+        </ul>
+
+        <p>A few other things to keep in mind:</p>
+        <ul>
+          <li>Every account has a ceiling on total sequences. The current count is shown in the top-right of the Sequences dashboard.</li>
+          <li>Any task created by a sequence is assigned to the user who enrolled the contact</li>
+          <li>If a workflow triggers sequence sends on behalf of a user, that user must also hold a Sales or Service seat</li>
+        </ul>
+
+        <div class="callout callout-note">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Note</strong>
+            A connected personal email is mandatory. Shared team inboxes hooked up to the Conversations tool cannot be used as the sender for sequence emails.
+          </div>
+        </div>
+
+        <h3>Create a sequence</h3>
+        <ol class="steps">
+          <li>In HubSpot, go to <strong>Sales → Sequences</strong></li>
+          <li>Click <strong>Create Sequence</strong> in the top right</li>
+          <li>In the left panel, pick <strong>Start from scratch</strong> or choose one of HubSpot's pre-built templates</li>
+          <li>Click <strong>Create sequence</strong> in the top right</li>
+          <li>Click the pencil icon and give your sequence a name</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Sequences dashboard — Create Sequence and template picker</div>
+            <span class="screenshot-filename">images/44-sequences-dashboard.png</span>
+          </div>
+        </figure>
+
+        <h3>Add steps to your sequence</h3>
+        <p>Click the <strong>+</strong> plus icon in the editor to add a step. Six step types are available:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Step Type</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Automated email</strong></td><td>Sends an email to the enrolled contact on its own. Can start a new email thread or reply within an earlier sequence thread. Uses an existing template or one you create on the fly.</td></tr>
+              <tr><td><strong>Manual email task</strong></td><td>Creates a reminder to send the email yourself. Useful when the message needs personalisation that templates can't cover.</td></tr>
+              <tr><td><strong>Call task</strong></td><td>Reminder to call the contact manually.</td></tr>
+              <tr><td><strong>General task</strong></td><td>Reminder to do any other follow-up action.</td></tr>
+              <tr><td><strong>InMail task</strong> <span style="color: var(--brand-primary); font-size: 11px;">(Sales Navigator)</span></td><td>Reminder to send a LinkedIn InMail. Requires the Sales Navigator integration with HubSpot.</td></tr>
+              <tr><td><strong>Connection request task</strong> <span style="color: var(--brand-primary); font-size: 11px;">(Sales Navigator)</span></td><td>Reminder to send a LinkedIn connection request through Sales Navigator.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Adding an automated email</h4>
+        <ol class="steps">
+          <li>Click the <strong>+</strong> plus icon, then click <strong>Automated email</strong></li>
+          <li>Choose the email type — start a new thread, or reply within an earlier sequence thread</li>
+          <li>To build a fresh template, click <strong>Create template</strong>. To use one you already have, filter the dropdown or search by name and pick it.</li>
+          <li>If the email is not the first step, click the <strong>[number] business day</strong> control next to <em>Delay</em> to set how long after the previous step it sends. Maximum delay is 90 business days.</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Add automated email — template selection and delay setting</div>
+            <span class="screenshot-filename">images/45-sequences-add-automated-email.png</span>
+          </div>
+        </figure>
+
+        <h4>Adding a task reminder (manual email, call, or general)</h4>
+        <ol class="steps">
+          <li>Click the <strong>+</strong> plus icon and choose <strong>Manual email task</strong>, <strong>Call task</strong>, or <strong>General task</strong></li>
+          <li>Under <em>Task details</em>, you can optionally check the box to pause the sequence until the task is completed</li>
+          <li>Enter a task title. Use the <strong>Personalize</strong> dropdown to drop in personalisation tokens.</li>
+          <li>Set priority via the <strong>Priority</strong> dropdown</li>
+          <li>Optionally assign the task to a queue using the <strong>Queue</strong> dropdown</li>
+          <li>Enter notes in the <em>Notes</em> field — the toolbar at the bottom handles formatting, links, snippets, and personalisation tokens</li>
+          <li>For manual email tasks: click <strong>Add email template</strong> to attach a template that pre-loads into the composer when the task is opened</li>
+          <li>Click <strong>Add</strong></li>
+          <li>Set the delay in business days. Set it to zero if the task should be created immediately after the previous step.</li>
+        </ol>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Manual email task with attached template</div>
+            <span class="screenshot-filename">images/46-sequences-task-with-template.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-tip">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><polyline points="9 7 12 4 15 7"/><line x1="12" y1="4" x2="12" y2="16"/></svg></div>
+          <div class="callout-body">
+            <strong>Tip</strong>
+            For the attached email template to auto-populate when you complete a manual email task, the task must be inside a task queue and completed from that queue or directly from the contact record. Outside a queue, you will need to manually open and send the email from the contact record.
+          </div>
+        </div>
+
+        <h4>Adding a Sales Navigator task</h4>
+        <ol class="steps">
+          <li>Click the <strong>+</strong> plus icon and pick <strong>Sales Navigator - InMail task</strong> or <strong>Sales Navigator - Connection request task</strong></li>
+          <li>Optionally pause the sequence until the task is completed</li>
+          <li>Enter a task title with personalisation tokens if you need them</li>
+          <li>Set priority and queue if relevant</li>
+          <li>Use the notes field to draft the InMail or connection message — keep in mind this text does not auto-populate into LinkedIn, so you will copy it across when completing the task</li>
+          <li>Click <strong>Add</strong> and set the delay</li>
+        </ol>
+
+        <p>When you complete a Sales Navigator task from a queue, the LinkedIn Sales Navigator panel opens on the contact's record so you can send the InMail or connection request without leaving HubSpot.</p>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Sales Navigator InMail and Connection request task setup</div>
+            <span class="screenshot-filename">images/47-sequences-sales-nav-task.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-info">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>Limits</strong>
+            A single sequence can contain up to 10 email templates. Task reminders have no limit.
+          </div>
+        </div>
+
+        <h4>Saving and sharing your sequence</h4>
+        <ol class="steps">
+          <li>Click <strong>Save</strong></li>
+          <li>In the right panel, pick a sharing setting. New and cloned sequences default to <strong>Only Me</strong>.</li>
+          <li>Click <strong>Save</strong> again to confirm</li>
+        </ol>
+
+        <h3>Edit sequence settings</h3>
+        <p>Sequence settings control how follow-up emails and tasks get timed. They apply to every step <em>after</em> the first one.</p>
+
+        <ol class="steps">
+          <li>At the top of the sequence editor, click the <strong>Settings</strong> tab</li>
+          <li>Follow-up emails default to business-day execution. Toggle <strong>Execute steps on business days only</strong> off if you want sends on Saturdays and Sundays.</li>
+          <li>Set an <strong>Automated email send window</strong> (start time and end time). HubSpot picks the best send moment within that window based on past open behaviour and the contact's timezone.</li>
+          <li>Tasks are created at the start of your account's calendar day (in the contact's enrollment timezone) and rolled into the <em>Tasks daily digest</em> email. For an extra email reminder each time a task is created:
+            <ul>
+              <li>Toggle <strong>Email reminders</strong> on</li>
+              <li>Use the time picker to set when the reminder lands. The task itself is due at 5pm that calendar day.</li>
+            </ul>
+          </li>
+          <li>Click <strong>Save</strong></li>
+        </ol>
+
+        <div class="callout callout-note">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>How business-day delays count</strong>
+            When business-day-only execution is on, delays skip weekends. Example: an email that sends Thursday at 5pm with a 3-day delay on the next step will fire the following Tuesday at 5pm — Saturday and Sunday are not counted.
+          </div>
+        </div>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Sequence Settings tab — business days, send window, email reminders</div>
+            <span class="screenshot-filename">images/48-sequences-settings.png</span>
+          </div>
+        </figure>
+
+        <h3>Edit sequence enrollment automation</h3>
+        <p>By default, a contact is auto-unenrolled when they reply to any sequence email or book a meeting via a meeting link inside a sequence step. You can extend this behaviour or wire up custom enrollment triggers.</p>
+
+        <ol class="steps">
+          <li>At the top of the sequence editor, click the <strong>Automation</strong> tab</li>
+          <li>To unenroll <em>every contact at the same company</em> when one of them replies or books a meeting, flip the relevant toggle on</li>
+          <li>Click <strong>Save</strong></li>
+        </ol>
+
+        <div class="callout callout-note">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="callout-body">
+            <strong>BETA — custom unenrollment triggers</strong>
+            HubSpot is rolling out additional unenrollment criteria (beyond reply and meeting-booked) in BETA. Check the Automation tab for any newer options that may have appeared in your account.
+          </div>
+        </div>
+
+        <h4>Custom workflows for enroll / unenroll</h4>
+        <p>From the same Automation tab, you can build workflows that enroll or unenroll contacts based on other behaviours.</p>
+
+        <ol class="steps">
+          <li>Under <em>Custom automation</em>, click <strong>Create an automation</strong></li>
+          <li>Pick a trigger:
+            <ul>
+              <li><strong>Form submission</strong> — choose <em>any form</em> or pick a specific form from the dropdown</li>
+              <li><strong>Page view</strong> — refine by URL (note: wildcards are not supported)</li>
+            </ul>
+          </li>
+          <li>Click <strong>Next: Set workflow action</strong></li>
+          <li>Under <em>Sequence actions</em>, pick one:
+            <ul>
+              <li><strong>Enroll contact in this sequence</strong> — also lets you set an optional pre-enrollment delay, the sender, and the from-email address</li>
+              <li><strong>Unenroll contact from this sequence</strong></li>
+            </ul>
+          </li>
+          <li>Click <strong>Create</strong></li>
+          <li>In the dialog, click <strong>Turn on</strong> to activate immediately, or <strong>Save as draft</strong> for later</li>
+        </ol>
+
+        <p>The new workflow appears in the trigger list on the Automation tab. Hover any workflow and click the <strong>Actions</strong> dropdown to edit triggers, edit actions, or delete it. You can also manage these workflows from the main Workflows tool.</p>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Custom automation — workflow trigger setup</div>
+            <span class="screenshot-filename">images/49-sequences-workflow-trigger.png</span>
+          </div>
+        </figure>
+
+        <h3>Edit an existing sequence</h3>
+        <p>You can reorder, edit, or remove steps in any sequence. If contacts are already enrolled when you edit, the changes affect them too — so look before you save.</p>
+
+        <h4>Reorder steps</h4>
+        <p>In the top right of any step, click the <strong>Actions</strong> dropdown and pick <strong>Move up</strong> or <strong>Move down</strong>.</p>
+
+        <h4>Edit emails and tasks inline</h4>
+        <ul>
+          <li><strong>Automated email:</strong> click the three-dots icon on the step, then <strong>Edit email</strong>. You can rework the body and save it as a new template.</li>
+          <li><strong>Manual email task template:</strong> click the three-dots icon, click <strong>Edit task</strong>, click the template name, then <strong>Edit</strong> from the dropdown.</li>
+          <li><strong>All other tasks:</strong> click the <strong>Actions</strong> dropdown on the step and pick <strong>Edit task</strong>.</li>
+        </ul>
+
+        <h4>Delete a step</h4>
+        <p>Click the <strong>Actions</strong> dropdown on the step and pick <strong>Delete</strong>.</p>
+
+        <h4>Save your changes</h4>
+        <p>When you finish editing, you get two save options in the top right:</p>
+        <ul>
+          <li><strong>Save existing</strong> — applies the changes to the current sequence (and affects contacts already enrolled in it)</li>
+          <li><strong>Make copy</strong> — creates a new sequence from your edits and leaves the original untouched. Enter a name and optionally a folder.</li>
+        </ul>
+
+        <figure>
+          <div class="screenshot-placeholder">
+            <div class="screenshot-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="screenshot-caption">Reorder, edit, and save options on an existing sequence</div>
+            <span class="screenshot-filename">images/50-sequences-edit-step.png</span>
+          </div>
+        </figure>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="callout-body">
+            <strong>⚠ Editing live sequences</strong>
+            Editing a sequence that has contacts mid-enrollment can change their experience downstream. If you are not sure about the impact, use <strong>Make copy</strong> and enroll new contacts in the new version instead of touching the live one.
+          </div>
+        </div>
+
+        <p style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-subtle); font-size: 13px; color: var(--text-muted);">
+          <strong>Source:</strong> <a href="https://knowledge.hubspot.com/sequences/create-and-edit-sequences" style="color: var(--brand-primary); text-decoration: none;" target="_blank" rel="noopener">knowledge.hubspot.com/sequences/create-and-edit-sequences</a> (last updated February 13, 2026). Refer to HubSpot's canonical documentation for the latest feature changes.
+        </p>
       </section>
 
       <!-- CLOSING ============================================ -->
